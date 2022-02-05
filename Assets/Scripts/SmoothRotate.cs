@@ -22,7 +22,6 @@ public class SmoothRotate: MonoBehaviour
     // Update is called once per frame
     void Update() {
         currentMovement = Mathf.SmoothDamp(currentMovement, input, ref currentVelocity, smoothInputSpeed);
-        Debug.Log(currentMovement);
         transform.RotateAround(Vector3.zero, Vector3.back, currentMovement * maxSpeed * Time.deltaTime);
     }
 }
