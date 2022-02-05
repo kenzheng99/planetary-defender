@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class WorldRotate: MonoBehaviour
+public class SmoothRotate: MonoBehaviour
 {
     [SerializeField, Tooltip("Input smooth damp speed.")]
     private float smoothInputSpeed = .2f;
@@ -23,6 +23,6 @@ public class WorldRotate: MonoBehaviour
     void Update() {
         currentMovement = Mathf.SmoothDamp(currentMovement, input, ref currentVelocity, smoothInputSpeed);
         Debug.Log(currentMovement);
-        transform.RotateAround(Vector3.zero, Vector3.back, -currentMovement * maxSpeed * Time.deltaTime);
+        transform.RotateAround(Vector3.zero, Vector3.back, currentMovement * maxSpeed * Time.deltaTime);
     }
 }
