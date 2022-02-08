@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Projectile
   - Planet
+  - UIDocument
   layers:
   - Default
   - TransparentFX
