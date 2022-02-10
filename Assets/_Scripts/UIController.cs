@@ -4,16 +4,14 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public class UIController : MonoBehaviour {
-   private Label counterLabel;
-   private int counter = 0;
+   private Label scoreLabel;
 
    void Start() {
       VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-      counterLabel = root.Q<Label>("counter");
+      scoreLabel = root.Q<Label>("counter");
    }
 
-   public void incrementCounter() {
-      counter++;
-      counterLabel.text = "Asteroids Destroyed: " + counter;
+   public void setScore(int score) {
+      scoreLabel.text = "Asteroids Destroyed: " + score;
    }
 }

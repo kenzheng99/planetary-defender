@@ -6,15 +6,16 @@ using UnityEngine.UIElements;
 
 public class AsteroidController : MonoBehaviour {
     private UIController ui;
+    private GameManager gameManager;
 
     void Awake() {
-        ui = FindObjectOfType<UIController>();
+        gameManager = FindObjectOfType<GameManager>();
     }
     private void OnCollisionEnter(Collision collision) {
         if (collision.collider.CompareTag("Projectile")) {
             Destroy(gameObject);
             Destroy(collision.collider.gameObject);
-            ui.incrementCounter();
+            gameManager.incrementScore();
         };
     }
 
