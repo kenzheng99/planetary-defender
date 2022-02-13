@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,20 +13,26 @@ public class ShipFire : MonoBehaviour {
     [SerializeField] float projectileForce = 20;
     [SerializeField] float cooldownTime = .5f;
 
+    private GameManager gameManager;
     private float lastFiredAt = .0f;
+
+    private void Awake() {
+        gameManager = GameManager.Instance;
+    }
 
     private void OnFire(InputValue val) {
         Fire();
+        gameManager.ProjectileFired();
     }
 
-    public void Fire() {
+    private void Fire() {
         if (lastFiredAt != .0f && lastFiredAt + cooldownTime > Time.time) {
             return;
         }
         
         GameObject projectileInstance = Instantiate(projectile, spawnLocation.position, transform.rotation);
-        Rigidbody projectileRB = projectileInstance.GetComponent<Rigidbody>();
-        projectileRB.AddForce(transform.up * projectileForce, ForceMode.Impulse);
+        Rigidbody projectileRb = projectileInstance.GetComponent<Rigidbody>();
+        projectileRb.AddForce(transform.up * projectileForce, ForceMode.Impulse);
         lastFiredAt = Time.time;
         muzzleFlash.Play();
     }

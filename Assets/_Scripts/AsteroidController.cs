@@ -8,14 +8,19 @@ public class AsteroidController : MonoBehaviour {
     private GameManager gameManager;
 
     void Awake() {
-        gameManager = FindObjectOfType<GameManager>();
+        gameManager = GameManager.Instance;
     }
     private void OnCollisionEnter(Collision collision) {
-        if (collision.collider.CompareTag("Projectile")) {
+        Collider collider = collision.collider;
+        
+        if (collider.CompareTag("Projectile")) {
             Destroy(gameObject);
             Destroy(collision.collider.gameObject);
-            gameManager.incrementScore();
-        };
+            gameManager.AsteroidDestroyed(AsteroidSize.LARGE);
+        } else if (collider.CompareTag("Planet")) {
+            Destroy(gameObject);
+            gameManager.AsteroidHitPlanet(AsteroidSize.LARGE);
+        }
     }
 
     void Update() {
