@@ -7,6 +7,9 @@ TagManager:
   - Projectile
   - Planet
   - UIDocument
+  - AsteroidLarge
+  - AsteroidMedium
+  - AsteroidSmall
   layers:
   - Default
   - TransparentFX

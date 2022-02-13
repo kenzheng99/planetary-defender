@@ -28,11 +28,11 @@ public class AsteroidSpawner : MonoBehaviour {
     private float nextSpawnTime = 0;
     private List<GameObject> asteroids;
 
-    void Start() {
+    private void Start() {
         asteroids = new List<GameObject> { big1, big2, big3, med1, med2, med3, sml1, sml2, sml3 };
     }
 
-    void Update() {
+    private void Update() {
         // if time to spawn,
         if (Time.time > nextSpawnTime) {
             
@@ -59,8 +59,8 @@ public class AsteroidSpawner : MonoBehaviour {
             spawnedRb.AddTorque(torque, ForceMode.Impulse);
 
             // sample next starting time
-            float timestep = Random.Range(spawnTimeMean - spawnTimeVar, spawnTimeMean + spawnTimeVar);
-            nextSpawnTime = Time.time + timestep;
+            float timeStep = Random.Range(spawnTimeMean - spawnTimeVar, spawnTimeMean + spawnTimeVar);
+            nextSpawnTime = Time.time + timeStep;
         }
     }
 }

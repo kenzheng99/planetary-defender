@@ -7,7 +7,6 @@ public class PlanetController : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other) {
         if (other.collider.CompareTag("Projectile")) {
-            Debug.Log("Earth Hit");
         }
     }
 }

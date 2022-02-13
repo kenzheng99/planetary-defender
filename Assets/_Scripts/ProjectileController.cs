@@ -21,7 +21,7 @@ public class ProjectileController : MonoBehaviour
         }
     }
 
-    void Update() {
+    private void Update() {
         Vector3 currentPos = transform.position;
         
         // Destroy projectile if too far from origin

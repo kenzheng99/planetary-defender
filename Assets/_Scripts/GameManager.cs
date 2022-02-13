@@ -10,41 +10,34 @@ public class GameManager : Singleton<GameManager> {
 
     public void ProjectileFired() {
         score = score < 10 ? 0 : score - 10;
-        uiController.setScore(score);
+        uiController.SetScore(score);
     }
     public void AsteroidDestroyed(AsteroidSize asteroidSize) {
-        switch (asteroidSize) {
-            case AsteroidSize.SMALL:
-                score += 50;
-                break;
-            case AsteroidSize.MEDIUM:
-                score += 100;
-                break;
-            case AsteroidSize.LARGE:
-                score += 200;
-                break;
-        }
-        uiController.setScore(score);
+        score += asteroidSize switch {
+            AsteroidSize.SMALL => 50,
+            AsteroidSize.MEDIUM => 100,
+            AsteroidSize.LARGE => 200,
+            _ => throw new ArgumentOutOfRangeException(nameof(asteroidSize), asteroidSize, null)
+        };
+        uiController.SetScore(score);
+        // Debug.Log($"Size {asteroidSize} asteroid destroyed");
     }
 
     public void AsteroidHitPlanet(AsteroidSize asteroidSize) {
-        switch (asteroidSize) {
-            case AsteroidSize.SMALL:
-                health -= 5;
-                break;
-            case AsteroidSize.MEDIUM:
-                health -= 10;
-                break;
-            case AsteroidSize.LARGE:
-                health -= 20;
-                break;
-        }
-        uiController.setHealth(health);
+        health -= asteroidSize switch {
+            AsteroidSize.SMALL => 5,
+            AsteroidSize.MEDIUM => 10,
+            AsteroidSize.LARGE => 20,
+            _ => throw new ArgumentOutOfRangeException(nameof(asteroidSize), asteroidSize, null)
+        };
+        uiController.SetHealth(health);
+        // Debug.Log($"Size {asteroidSize} asteroid hit planet");
     }
 
     public void ProjectileHitPlanet() {
         health -= 5;
-        uiController.setHealth(health);
+        uiController.SetHealth(health);
+        // Debug.Log("Projectile hit planet");
     }
 }
 

@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.VFX;
 
 public class ShipFire : MonoBehaviour {
-    [SerializeField] GameObject projectile;
-    [SerializeField] Transform spawnLocation;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private Transform spawnLocation;
     [SerializeField] private VisualEffect muzzleFlash;
     
     [SerializeField] float projectileForce = 20;

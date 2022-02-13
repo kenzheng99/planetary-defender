@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid Big 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4606801171652333824, guid: a60a3c681b1cf47bab63006c8252ccf1, type: 3}
+      propertyPath: m_TagString
+      value: AsteroidLarge
+      objectReference: {fileID: 0}
     - target: {fileID: 5999902026463878307, guid: a60a3c681b1cf47bab63006c8252ccf1, type: 3}
       propertyPath: m_Mesh
       value: 

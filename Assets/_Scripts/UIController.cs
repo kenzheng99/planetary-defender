@@ -7,17 +7,17 @@ public class UIController : MonoBehaviour {
    private Label scoreLabel;
    private Label healthLabel;
 
-   void Start() {
+   private void Start() {
       VisualElement root = GetComponent<UIDocument>().rootVisualElement;
       scoreLabel = root.Q<Label>("score");
       healthLabel = root.Q<Label>("health");
    }
 
-   public void setScore(int score) {
+   public void SetScore(int score) {
       scoreLabel.text = score.ToString();
    }
 
-   public void setHealth(int health) {
+   public void SetHealth(int health) {
       healthLabel.text = health.ToString();
    }
 }
