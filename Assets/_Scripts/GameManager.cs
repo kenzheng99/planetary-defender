@@ -5,10 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
     private int score = 0;
-    private UIController uiController;
-    private void Awake() {
-        uiController = FindObjectOfType<UIController>();
-    }
+    [SerializeField] private UIController uiController;
 
     public void incrementScore() {
         score += 1;

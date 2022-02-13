@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public class AsteroidController : MonoBehaviour {
-    private UIController ui;
     private GameManager gameManager;
 
     void Awake() {

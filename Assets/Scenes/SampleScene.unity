@@ -567,6 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 903473f1facff4c5897ee57522316350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiController: {fileID: 1167055117}
 --- !u!4 &1249832244
 Transform:
   m_ObjectHideFlags: 0
@@ -1079,9 +1080,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 8957129432583081411, guid: 37e1c6a83619d4699b585839bc3858bb, type: 3}
   spawnLocation: {fileID: 1060205376}
+  muzzleFlash: {fileID: 1419065913}
   projectileForce: 20
   cooldownTime: 0.5
-  muzzleFlash: {fileID: 1419065913}
 --- !u!4 &1682858991 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5168a0bac22664321a6b9cdc12577936, type: 3}
