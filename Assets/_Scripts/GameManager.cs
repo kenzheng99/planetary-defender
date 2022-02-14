@@ -1,43 +1,82 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using _Scripts;
+using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager> {
-    private int score = 0;
+    [SerializeField] private UIManager uiManager;
+    
     private int health = 100;
-    [SerializeField] private UIController uiController;
+    private GameScore score;
+
+    public override void Awake() {
+        base.Awake();
+        score = new GameScore();
+    }
 
     public void ProjectileFired() {
-        score = score < 10 ? 0 : score - 10;
-        uiController.SetScore(score);
+        score.Score = score.Score < GameBalance.ScoreBullet ? 0 : score.Score - GameBalance.ScoreBullet;
+        score.BulletsFired++;
+        uiManager.SetScore(score.Score);
     }
     public void AsteroidDestroyed(AsteroidSize asteroidSize) {
-        score += asteroidSize switch {
-            AsteroidSize.SMALL => 50,
-            AsteroidSize.MEDIUM => 100,
-            AsteroidSize.LARGE => 200,
+        score.Score += asteroidSize switch {
+            AsteroidSize.SMALL => GameBalance.ScoreSmall,
+            AsteroidSize.MEDIUM => GameBalance.ScoreMedium,
+            AsteroidSize.LARGE => GameBalance.ScoreLarge,
             _ => throw new ArgumentOutOfRangeException(nameof(asteroidSize), asteroidSize, null)
         };
-        uiController.SetScore(score);
+        score.CountAsteroid(asteroidSize);
+        uiManager.SetScore(score.Score);
         // Debug.Log($"Size {asteroidSize} asteroid destroyed");
     }
 
     public void AsteroidHitPlanet(AsteroidSize asteroidSize) {
         health -= asteroidSize switch {
-            AsteroidSize.SMALL => 5,
-            AsteroidSize.MEDIUM => 10,
-            AsteroidSize.LARGE => 20,
+            AsteroidSize.SMALL => GameBalance.DamageSmall,
+            AsteroidSize.MEDIUM => GameBalance.DamageMedium,
+            AsteroidSize.LARGE => GameBalance.DamageLarge,
             _ => throw new ArgumentOutOfRangeException(nameof(asteroidSize), asteroidSize, null)
         };
-        uiController.SetHealth(health);
+        if (health <= 0) {
+            health = 0;
+            GameOver();
+        }
+        uiManager.SetHealth(health);
         // Debug.Log($"Size {asteroidSize} asteroid hit planet");
     }
 
     public void ProjectileHitPlanet() {
-        health -= 5;
-        uiController.SetHealth(health);
+        health -= 50;
+        if (health <= 0) {
+            health = 0;
+            GameOver();
+        }
+        uiManager.SetHealth(health);
         // Debug.Log("Projectile hit planet");
+    }
+
+    private void GameOver() {
+        if (score.Score > score.HighScore) {
+            score.HighScore = score.Score;
+        }
+        uiManager.SetGameOver(score);
+    }
+
+    public void Retry() {
+        score.ResetScore();
+        health = 100;
+        uiManager.SetHealth(health);
+        uiManager.SetScore(score.Score);
+        uiManager.ToggleGameUI();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Quit() {
+        Debug.Log("quit");
     }
 }
 

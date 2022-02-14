@@ -22,7 +22,6 @@ public class ShipFire : MonoBehaviour {
 
     private void OnFire(InputValue val) {
         Fire();
-        gameManager.ProjectileFired();
     }
 
     private void Fire() {
@@ -35,5 +34,6 @@ public class ShipFire : MonoBehaviour {
         projectileRb.AddForce(transform.up * projectileForce, ForceMode.Impulse);
         lastFiredAt = Time.time;
         muzzleFlash.Play();
+        gameManager.ProjectileFired();
     }
 }

@@ -4,20 +4,13 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public class UIController : MonoBehaviour {
-   private Label scoreLabel;
-   private Label healthLabel;
+   protected VisualElement Root;
 
-   private void Start() {
-      VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-      scoreLabel = root.Q<Label>("score");
-      healthLabel = root.Q<Label>("health");
+   protected virtual void Awake() {
+      Root = GetComponent<UIDocument>().rootVisualElement;
    }
 
-   public void SetScore(int score) {
-      scoreLabel.text = score.ToString();
-   }
-
-   public void SetHealth(int health) {
-      healthLabel.text = health.ToString();
+   public void ToggleVisibility(bool visible) {
+      Root.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
    }
 }
