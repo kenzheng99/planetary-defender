@@ -1,13 +1,13 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/styles.uss?fileID=7433441132597879392&amp;guid=6dc2708971af24c14b648a260b435cac&amp;type=3#styles" />
+    <Style src="project://database/Assets/UI%20Toolkit/GameStyles.uss?fileID=7433441132597879392&amp;guid=6dc2708971af24c14b648a260b435cac&amp;type=3#GameStyles" />
     <ui:VisualElement name="screen" style="width: 100%; height: 100%; flex-direction: column;">
-        <ui:VisualElement name="header-bar" style="flex-direction: row; align-items: stretch; justify-content: space-between;">
+        <ui:VisualElement name="header-bar" style="flex-direction: row; align-items: stretch; justify-content: space-between; -unity-font-definition: url(&apos;project://database/Assets/Fonts/conthrax-sb%20SDF.asset?fileID=11400000&amp;guid=1ef616fd70072430baef7e2b31c9113c&amp;type=2#conthrax-sb SDF&apos;);">
             <ui:VisualElement name="header-component" class="header-component">
                 <ui:Label text="100" display-tooltip-when-elided="true" name="health" class="text-basic" style="font-size: 40px;" />
                 <ui:Label text="Health" display-tooltip-when-elided="true" name="health-text" class="text-basic" />
             </ui:VisualElement>
             <ui:VisualElement name="header-component" class="header-component" style="-unity-text-align: upper-right;">
-                <ui:Label text="000" display-tooltip-when-elided="true" name="score" style="font-size: 40px; color: rgba(255, 255, 255, 255); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:Label text="000" display-tooltip-when-elided="true" name="score" style="font-size: 40px; color: rgb(255, 255, 255); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
                 <ui:Label text="Score" display-tooltip-when-elided="true" name="health-text" class="text-basic" />
             </ui:VisualElement>
         </ui:VisualElement>

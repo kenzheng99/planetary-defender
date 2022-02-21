@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyles.uss?fileID=7433441132597879392&amp;guid=4440194ee81a1497da5b5f5fd57f276f&amp;type=3#MainMenuStyles" />
-    <ui:VisualElement name="screen" style="width: 100%; height: 100%; justify-content: space-between;">
+    <ui:VisualElement name="screen" style="width: 100%; height: 100%; justify-content: space-between; -unity-font-definition: url(&apos;project://database/Assets/Fonts/conthrax-sb%20SDF.asset?fileID=11400000&amp;guid=1ef616fd70072430baef7e2b31c9113c&amp;type=2#conthrax-sb SDF&apos;);">
         <ui:VisualElement name="title-wrapper" style="margin-left: 30px; margin-right: 30px; margin-top: 30px; margin-bottom: 0;">
-            <ui:Label text="PLANETARY DEFENDER" display-tooltip-when-elided="true" name="title" style="color: rgb(255, 255, 255); font-size: 80px; -unity-text-align: upper-center;" />
+            <ui:Label text="PLANETARY DEFENDER" display-tooltip-when-elided="true" name="title" style="color: rgb(255, 255, 255); font-size: 70px; -unity-text-align: upper-center; -unity-font: url(&apos;project://database/Assets/Fonts/conthrax-sb.ttf?fileID=12800000&amp;guid=2ab3669e7e6244c988c04b60ca83b6cf&amp;type=3#conthrax-sb&apos;); -unity-font-definition: url(&apos;project://database/Assets/Fonts/conthrax-sb%20SDF.asset?fileID=11400000&amp;guid=1ef616fd70072430baef7e2b31c9113c&amp;type=2#conthrax-sb SDF&apos;);" />
         </ui:VisualElement>
         <ui:VisualElement name="button-area" style="flex-direction: column; align-items: center; justify-content: space-between; -unity-text-align: upper-center; margin-top: 0; margin-left: 0; margin-right: 0; margin-bottom: 0;">
             <ui:VisualElement name="button-wrap" style="margin-left: 30px; margin-right: 30px; margin-top: 30px; margin-bottom: 30px; -unity-text-align: upper-center;">
@@ -12,7 +12,8 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="footer-wrapper">
-            <ui:Label text="A game by Ken Zheng" display-tooltip-when-elided="true" style="color: rgba(255, 255, 255, 255); font-size: 20px; -unity-text-align: upper-center; margin-bottom: 10px;" />
+            <ui:Label text="A game by Ken Zheng" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); font-size: 20px; -unity-text-align: upper-center; margin-bottom: 10px;" />
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:Label text="v0.1" display-tooltip-when-elided="true" style="position: absolute; right: 0; bottom: 0; font-size: 20px; background-color: rgba(0, 0, 0, 255); color: rgba(255, 255, 255, 255); -unity-font-definition: url(&apos;project://database/Assets/Fonts/conthrax-sb%20SDF.asset?fileID=11400000&amp;guid=1ef616fd70072430baef7e2b31c9113c&amp;type=2#conthrax-sb SDF&apos;); margin-bottom: 10px; margin-right: 10px;" />
 </ui:UXML>

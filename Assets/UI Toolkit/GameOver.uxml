@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/GameOverStyles.uss?fileID=7433441132597879392&amp;guid=3a4c7e9ff47794639ae2ee8095337ad5&amp;type=3#GameOverStyles" />
-    <ui:VisualElement name="screen" style="width: 100%; height: 100%; flex-direction: row; align-items: stretch; justify-content: center; display: flex; visibility: visible;">
-        <ui:VisualElement name="content-box" style="background-color: rgba(0, 0, 0, 0.55); -unity-background-scale-mode: stretch-to-fill; width: 80%; height: 80%; margin-top: 50px; margin-left: 0; margin-right: 0; margin-bottom: 0; align-items: center; padding-left: 30px; padding-right: 30px; padding-top: 30px; padding-bottom: 30px;">
+    <ui:VisualElement name="screen" style="width: 100%; height: 100%; flex-direction: row; align-items: center; justify-content: center; display: flex; visibility: visible;">
+        <ui:VisualElement name="content-box" style="background-color: rgba(0, 0, 0, 0.55); -unity-background-scale-mode: stretch-to-fill; width: 80%; height: 80%; margin-top: 10px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px; align-items: center; padding-left: 30px; padding-right: 30px; padding-top: 30px; padding-bottom: 30px; justify-content: space-around; -unity-font-definition: url(&apos;project://database/Assets/Fonts/conthrax-sb%20SDF.asset?fileID=11400000&amp;guid=1ef616fd70072430baef7e2b31c9113c&amp;type=2#conthrax-sb SDF&apos;);">
             <ui:VisualElement name="title">
                 <ui:Label text="GAME OVER" display-tooltip-when-elided="true" style="font-size: 50px; -unity-text-align: upper-center; color: rgb(255, 0, 0);" />
             </ui:VisualElement>
