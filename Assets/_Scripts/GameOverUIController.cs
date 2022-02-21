@@ -30,7 +30,7 @@ namespace _Scripts {
             buttonRetry = Root.Q<Button>("button-retry");
             buttonRetry.clicked += gameManager.Retry;
             buttonQuit = Root.Q<Button>("button-quit");
-            buttonQuit.clicked += gameManager.Quit;
+            buttonQuit.clicked += gameManager.QuitToMenu;
         }
 
         public void SetGameOverStatistics(GameScore score) {

@@ -18,6 +18,11 @@ public class ShipFire : MonoBehaviour {
 
     private void Awake() {
         gameManager = GameManager.Instance;
+        lastFiredAt = Time.time;
+    }
+
+    private void Start() {
+        lastFiredAt = Time.time;
     }
 
     private void OnFire(InputValue val) {

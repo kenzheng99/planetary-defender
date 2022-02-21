@@ -59,10 +59,17 @@ public class GameManager : Singleton<GameManager> {
         // Debug.Log("Projectile hit planet");
     }
 
+    //SCENE CHANGES
+
+    public void NewGame() {
+        Retry();
+    }
+    
     private void GameOver() {
         if (score.Score > score.HighScore) {
             score.HighScore = score.Score;
         }
+        SceneManager.LoadScene("GameOverScene");
         uiManager.SetGameOver(score);
     }
 
@@ -72,8 +79,13 @@ public class GameManager : Singleton<GameManager> {
         uiManager.SetHealth(health);
         uiManager.SetScore(score.Score);
         uiManager.ToggleGameUI();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("MainScene");
     }
+
+    public void QuitToMenu() {
+        uiManager.ToggleMainMenuUI();
+        SceneManager.LoadScene("MainMenuScene");
+    } 
 
     public void Quit() {
         Debug.Log("quit");
