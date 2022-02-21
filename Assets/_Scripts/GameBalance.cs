@@ -8,5 +8,6 @@ namespace _Scripts {
         public const int DamageSmall = 5;
         public const int DamageMedium = 10;
         public const int DamageLarge = 20;
+        public const int DamageBullet = 5;
     }
 }

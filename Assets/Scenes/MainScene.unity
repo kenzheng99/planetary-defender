@@ -418,8 +418,8 @@ VisualEffect:
   m_GameObject: {fileID: 1419065911}
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: d5a845380ecc64bf196c62ac3794132c, type: 3}
-  m_InitialEventName: OnPlay
-  m_InitialEventNameOverriden: 0
+  m_InitialEventName: 
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
   m_ResourceVersion: 1
@@ -769,6 +769,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5168a0bac22664321a6b9cdc12577936, type: 3}
+      propertyPath: m_TagString
+      value: Ship
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5168a0bac22664321a6b9cdc12577936, type: 3}
 --- !u!1 &1682858986 stripped
@@ -804,7 +808,7 @@ MonoBehaviour:
   spawnLocation: {fileID: 1060205376}
   muzzleFlash: {fileID: 1419065913}
   projectileForce: 20
-  cooldownTime: 0.5
+  cooldownTime: 0.2
 --- !u!4 &1682858991 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5168a0bac22664321a6b9cdc12577936, type: 3}
@@ -876,7 +880,7 @@ MonoBehaviour:
   sml1: {fileID: 346818047798294784, guid: 239f1b58d70ca413487e39c2ab573762, type: 3}
   sml2: {fileID: 702152729280593875, guid: 448b67b72f9af4699a910a5210295ea3, type: 3}
   sml3: {fileID: 9090089712674033643, guid: 84bc43608feed4bc8941e80f67da3c2f, type: 3}
-  spawnTimeMean: 2
+  spawnTimeMean: 1.5
   spawnTimeVar: 1
   spawnRadius: 30
   forceMean: 3
@@ -1006,6 +1010,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2486429191949004879, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
+      propertyPath: m_MoveAction
+      value: 
+      objectReference: {fileID: 1209937352795665389, guid: 8787191d7559e44838e7df53d97579fe, type: 3}
+    - target: {fileID: 2486429191949004879, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
+      propertyPath: m_PointAction
+      value: 
+      objectReference: {fileID: 3048411154388485104, guid: 8787191d7559e44838e7df53d97579fe, type: 3}
+    - target: {fileID: 2486429191949004879, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
+      propertyPath: m_ActionsAsset
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 8787191d7559e44838e7df53d97579fe, type: 3}
+    - target: {fileID: 2486429191949004879, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
+      propertyPath: m_CancelAction
+      value: 
+      objectReference: {fileID: 1237331001083931033, guid: 8787191d7559e44838e7df53d97579fe, type: 3}
+    - target: {fileID: 2486429191949004879, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
+      propertyPath: m_SubmitAction
+      value: 
+      objectReference: {fileID: 7535058412355351486, guid: 8787191d7559e44838e7df53d97579fe, type: 3}
+    - target: {fileID: 2486429191949004879, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
+      propertyPath: m_LeftClickAction
+      value: 
+      objectReference: {fileID: 5224175880328554100, guid: 8787191d7559e44838e7df53d97579fe, type: 3}
+    - target: {fileID: 2486429191949004879, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
+      propertyPath: m_RightClickAction
+      value: 
+      objectReference: {fileID: -3643830793630775056, guid: 8787191d7559e44838e7df53d97579fe, type: 3}
+    - target: {fileID: 2486429191949004879, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
+      propertyPath: m_MiddleClickAction
+      value: 
+      objectReference: {fileID: -8569243804831360949, guid: 8787191d7559e44838e7df53d97579fe, type: 3}
+    - target: {fileID: 2486429191949004879, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
+      propertyPath: m_ScrollWheelAction
+      value: 
+      objectReference: {fileID: 7269110172904804519, guid: 8787191d7559e44838e7df53d97579fe, type: 3}
+    - target: {fileID: 2486429191949004879, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
+      propertyPath: m_TrackedDevicePositionAction
+      value: 
+      objectReference: {fileID: -2624842293200095082, guid: 8787191d7559e44838e7df53d97579fe, type: 3}
+    - target: {fileID: 2486429191949004879, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
+      propertyPath: m_TrackedDeviceOrientationAction
+      value: 
+      objectReference: {fileID: -128745675866545411, guid: 8787191d7559e44838e7df53d97579fe, type: 3}
     - target: {fileID: 4859978090419212686, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -11,12 +11,17 @@ public class SmoothRotate: MonoBehaviour
     [SerializeField, Tooltip("Max movement speed")]
     private float maxSpeed = 20;
 
+    private GameManager gameManager;
     private float input;
     private float currentMovement;
     private float currentVelocity;
 
+    private void Awake() {
+        gameManager = GameManager.Instance;
+    }
+
     private void OnMove(InputValue movementValue) {
-        input = movementValue.Get<Vector2>().x;
+        input = gameManager.disableMovement ? 0 : movementValue.Get<Vector2>().x;
     }
 
     // Update is called once per frame

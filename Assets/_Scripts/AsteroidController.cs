@@ -3,8 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.VFX;
 
 public class AsteroidController : MonoBehaviour {
+    [SerializeField] private GameObject explosionVFX;
+    
     private GameManager gameManager;
     private AsteroidSize asteroidSize;
 
@@ -19,9 +22,16 @@ public class AsteroidController : MonoBehaviour {
             Destroy(gameObject);
             Destroy(collider.gameObject);
             gameManager.AsteroidDestroyed(asteroidSize);
+            Instantiate(explosionVFX, transform.position, Quaternion.identity);
         } else if (collider.CompareTag("Planet")) {
             Destroy(gameObject);
             gameManager.AsteroidHitPlanet(asteroidSize);
+            Instantiate(explosionVFX, collision.transform.position, Quaternion.identity);
+        } else if (collider.CompareTag("Ship")) {
+            gameManager.DelayedGameOver(Time.time + 2);
+            Destroy(gameObject);
+            Destroy(collider.gameObject);
+            Instantiate(explosionVFX, collider.transform.position, Quaternion.identity);
         }
     }
 

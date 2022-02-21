@@ -128,3 +128,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc41aadb43c51400c862596f38091b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionVFX: {fileID: 8053520554480233246, guid: 3c608c5da99c64ad6969ed3f3e3b7acc, type: 3}

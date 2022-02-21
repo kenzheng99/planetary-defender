@@ -1,16 +1,16 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using _Scripts;
-using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager> {
+    public bool disableMovement = false;
+        
     [SerializeField] private UIManager uiManager;
     
     private int health = 100;
     private GameScore score;
+    private float gameOverTime = 0;
 
     public override void Awake() {
         base.Awake();
@@ -50,7 +50,7 @@ public class GameManager : Singleton<GameManager> {
     }
 
     public void ProjectileHitPlanet() {
-        health -= 50;
+        health -= GameBalance.DamageBullet;
         if (health <= 0) {
             health = 0;
             GameOver();
@@ -64,8 +64,13 @@ public class GameManager : Singleton<GameManager> {
     public void NewGame() {
         Retry();
     }
+
+    public void DelayedGameOver(float time) {
+        disableMovement = true;
+        gameOverTime = time;
+    }
     
-    private void GameOver() {
+    public void GameOver() {
         if (score.Score > score.HighScore) {
             score.HighScore = score.Score;
         }
@@ -79,6 +84,7 @@ public class GameManager : Singleton<GameManager> {
         uiManager.SetHealth(health);
         uiManager.SetScore(score.Score);
         uiManager.ToggleGameUI();
+        disableMovement = false;
         SceneManager.LoadScene("MainScene");
     }
 
@@ -89,11 +95,19 @@ public class GameManager : Singleton<GameManager> {
 
     public void Quit() {
         Debug.Log("quit");
+        Application.Quit();
     }
 
     public void ToggleHowToPlay() {
         Debug.Log("How to play clicked");
         uiManager.ToggleHowToPlayUI();
+    }
+
+    private void Update() {
+        if (gameOverTime > 0 && Time.time > gameOverTime) {
+            gameOverTime = 0;
+            GameOver();
+        }
     }
 }
 
