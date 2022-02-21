@@ -1,0 +1,29 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/HowToPlayStyles.uss?fileID=7433441132597879392&amp;guid=fd72a0aa7da234c8abe85da334880e1a&amp;type=3#HowToPlayStyles" />
+    <ui:VisualElement name="screen" style="width: 100%; height: 100%;">
+        <ui:VisualElement name="modal" style="flex-grow: 1; margin-left: 200px; margin-right: 200px; margin-top: 50px; margin-bottom: 50px; background-color: rgba(38, 38, 38, 0.91); -unity-text-align: upper-left; align-items: stretch;">
+            <ui:Label text="How To Play" display-tooltip-when-elided="true" name="title" style="color: rgba(255, 255, 255, 255); -unity-text-align: upper-center; font-size: 40px; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;" />
+            <ui:VisualElement name="instructions" style="flex-grow: 1;">
+                <ui:VisualElement name="instruction-box" class="instruction-box">
+                    <ui:Label text="•" display-tooltip-when-elided="true" />
+                    <ui:VisualElement name="button-prompt" class="button-prompt-image" />
+                    <ui:Label text="or" display-tooltip-when-elided="true" />
+                    <ui:VisualElement name="button-prompt" class="button-prompt-image" style="background-image: url(&apos;project://database/Assets/Textures/D_Key_Light.png?fileID=2800000&amp;guid=856991fc4320c4925afc5af415f2c3ef&amp;type=3#D_Key_Light&apos;);" />
+                    <ui:Label text="to orbit ship around Earth" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+                <ui:VisualElement name="instruction-box" class="instruction-box">
+                    <ui:Label text="•" display-tooltip-when-elided="true" />
+                    <ui:VisualElement name="button-prompt" class="button-prompt-image" style="background-image: url(&apos;project://database/Assets/Textures/Mouse_Left_Key_Light.png?fileID=2800000&amp;guid=3c867cbaf991143da91dddb18b7a578f&amp;type=3#Mouse_Left_Key_Light&apos;);" />
+                    <ui:Label text="to aim and shoot" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+                <ui:VisualElement name="instruction-box" class="instruction-box">
+                    <ui:Label text="•" display-tooltip-when-elided="true" />
+                    <ui:Label text="Shoot down the asteroids before they destroy Earth!" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="instruction-box" class="instruction-box" style="align-items: flex-end; justify-content: space-around; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;">
+                <ui:Button text="Back" display-tooltip-when-elided="true" name="button-back" style="width: 200px; background-color: rgba(147, 147, 147, 0.39); border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

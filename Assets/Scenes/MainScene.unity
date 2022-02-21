@@ -321,7 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 8787191d7559e44838e7df53d97579fe, type: 3}
   m_NotificationBehavior: 1
-  m_UIInputModule: {fileID: 0}
+  m_UIInputModule: {fileID: 2098452062}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1006,6 +1006,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4859978090419212686, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8854321656726099577, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1056,6 +1060,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
+--- !u!114 &2098452062 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2486429191949004879, guid: a642ea3564e4f4f908be9a39b19b068b, type: 3}
+  m_PrefabInstance: {fileID: 2098452061}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &543450653328325399 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8683370202484564104, guid: 5a3053c8a0be84f12a4bf3562ac3b2a0, type: 3}

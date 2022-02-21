@@ -16,6 +16,7 @@ namespace _Scripts {
         private void Start() {
             gameManager = GameManager.Instance;
             buttonNewGame.clicked += gameManager.NewGame;
+            buttonHowToPlay.clicked += gameManager.ToggleHowToPlay;
             buttonQuit.clicked += gameManager.Quit;
         }
     }

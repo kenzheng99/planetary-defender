@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour {
     [SerializeField] private GameUIController gameUI;
     [SerializeField] private GameOverUIController gameOverUI;
     [SerializeField] private MainMenuUIController mainMenuUI;
+    [SerializeField] private UIController howToPlayUI;
 
     private void Start() {
         Scene scene = SceneManager.GetActiveScene();
@@ -36,6 +37,11 @@ public class UIManager : MonoBehaviour {
         gameUI.ToggleVisibility(false);
         gameOverUI.ToggleVisibility(false);
         mainMenuUI.ToggleVisibility(true);
+    }
+
+    public void ToggleHowToPlayUI() {
+        howToPlayUI.ToggleVisibility(true);
+        
     }
 
     public void SetScore(int score) {

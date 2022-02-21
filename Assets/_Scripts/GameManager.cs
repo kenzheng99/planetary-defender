@@ -90,6 +90,11 @@ public class GameManager : Singleton<GameManager> {
     public void Quit() {
         Debug.Log("quit");
     }
+
+    public void ToggleHowToPlay() {
+        Debug.Log("How to play clicked");
+        uiManager.ToggleHowToPlayUI();
+    }
 }
 
 public enum AsteroidSize {
